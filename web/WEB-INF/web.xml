@@ -20,6 +20,14 @@
         <servlet-name>SysAdminnistration</servlet-name>
         <servlet-class>org.health.SysAdminnistration</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>freetrial</servlet-name>
+        <servlet-class>org.health.freetrial</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DBConnect</servlet-name>
+        <servlet-class>org.health.DBConnect</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>health</servlet-name>
         <url-pattern>/health</url-pattern>
@@ -39,6 +47,14 @@
     <servlet-mapping>
         <servlet-name>SysAdminnistration</servlet-name>
         <url-pattern>/SysAdminnistration</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>freetrial</servlet-name>
+        <url-pattern>/freetrial</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DBConnect</servlet-name>
+        <url-pattern>/DBConnect</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
