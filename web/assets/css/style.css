@@ -24,7 +24,6 @@ img{max-width:100%;}
 /*end reset*/
 body{
 	background:#F8FBFB;
-        font-family: 'Ropa Sans', sans-serif;
 }
 .wrap{
 	width:70%;
@@ -36,9 +35,6 @@ body{
 .logo{
 	float:left;
 	margin-top: 14px;
-        border-radius: 20px;
-        width: 100px;
-        height: 40px;
 }
 .top-nav{
 	float:right;
@@ -71,7 +67,7 @@ body{
 	background:#3391E7;
 	padding: 10px 0px;
 }
-/*  GRID OF TWO   ============================================================================= */
+/*  GRID OF THREE   ============================================================================= */
 .section {
 	clear: both;
 	padding: 0px;
@@ -88,7 +84,7 @@ body{
 .group {
     zoom:1;
 }
-.listview_1_of_2{
+.listview_1_of_3{
 	display: block;
 	float:left;
 	margin: 0% 0 0% 1.6%;
@@ -103,21 +99,21 @@ body{
 	float:left;
 	margin: 0% 0 0% 3.6%;
 }
-.listview_1_of_2:first-child { margin-left: 0; } /* all browsers except IE6 and lower */
+.listview_1_of_3:first-child { margin-left: 0; } /* all browsers except IE6 and lower */
 
-.images_1_of_2 {
-	width: 45%;
+.images_1_of_3 {
+	width: 29.2%;
 	padding:1.5%; 
 	border-radius: 1.1em;
 }
 .listimg_1_of_2{
-	width: 45%;
+	width: 32.2%;
 }
 .list_1_of_2 {
 	width: 64.2%;
 	margin-top: 5px;
 }
-.images_1_of_2  img {
+.images_1_of_3  img {
 	max-width:100%;
 	display:block;
 }
@@ -164,13 +160,13 @@ body{
 	.wrap{
 		width:95%;
 	}
-	.listview_1_of_2{ 
+	.listview_1_of_3{ 
 		margin: 2% 0 2% 0%;
 	}
 	.text{
 		margin:0;
 	}	
-	.images_1_of_2 {
+	.images_1_of_3 {
 		width:94%;
 		padding:3%;
 	}
@@ -188,13 +184,13 @@ body{
 	.wrap{
 		width:95%;
 	}
-	.listview_1_of_2{ 
+	.listview_1_of_3{ 
 		margin: 2% 0 2% 0%;
 	}
 	.text{
 		margin:0;
 	}	
-	.images_1_of_2 {
+	.images_1_of_3 {
 		width:92%;
 		padding:4%;
 	}
@@ -205,27 +201,6 @@ body{
 		width: 100%;
 	}
 }
-
-/* Bottom carousel ============================================================================= */
-*{
-    margin: 0;
-    padding: 0;
-}
-
-.cell{
-    margin: 0 15px ;
-    height: 350px; 
-    width: 33%;
-    overflow: hidden;
-    border-radius: 8px;
-}
-
-.cell img{
-    width: 100%;
-    height: 350px; 
-    object-fit: cover;
-}
-
 /*  GRID OF THREE   ============================================================================= */
 .section {
 	clear: both;
@@ -366,21 +341,10 @@ body{
 	background:#e0e7eb;
 	padding: 15px 4px;
 }
-.footer-left{
-	float:left;
-}
-.footer-left ul li{
-	display:inline-block;
-}
-.footer-left ul li a{
-	font-family: 'Ropa Sans', sans-serif;
-	color:rgb(139, 139, 139);
-	text-transform: uppercase;
-	display: block;
-	margin-right:10px;
-}
 .footer-right{
-	float:right;
+	float:none;
+        margin: auto;
+      
 }
 .footer-right p{
 	font-family: 'Ropa Sans', sans-serif;
@@ -392,9 +356,7 @@ body{
 	color:rgb(139, 139, 139);
 	font-family: 'Ropa Sans', sans-serif;
 }
-.footer-right a:hover,.footer-left ul li a:hover{
-	color:#3391E7;
-}
+
 /*---about---*/
 .about h4,.services h4{
 	color: rgb(139, 139, 139);
@@ -432,6 +394,7 @@ body{
 }
 .col_1_of_5:first-child { margin-left: 0; }
 .col_1_of_5:nth-child(6){ margin-left: 0; }
+.col_1_of_5:nth-child(11){ margin-left: 0; }
 .span_1_of_5 {
   	width: 15.72%;
   	padding: 1.4%;
@@ -1013,7 +976,7 @@ body{
 .top-nav ul li a {
     padding: 25px 18px;
 }
-.footer-left,.footer-right {
+.footer-right {
     float: none;
     text-align: center;
 }
@@ -1132,64 +1095,72 @@ body{
 }
 }
 
+/*----pop up----*/
 
-/*  table sys administration   ============================================================================= */
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
+/* Button used to open the contact form - fixed at the bottom of the page */
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
   width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
 }
 
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
 }
 
-tr:nth-child(even) {
-  background-color: #dddddd;
-}
-
-/* table search section*/
-
-#myInput {
-  background-image: url('/assets/images/searchicon.png');
-  background-position: 10px 10px;
-  background-repeat: no-repeat;
-  width: 100%;
-  font-size: 16px;
-  padding: 12px 20px 12px 40px;
-  border: 1px solid #ddd;
-  margin-bottom: 12px;
-}
-
-/*  bottom email section sys administration   ============================================================================= */
-.email input[type=text], select, textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  margin-top: 6px;
-  margin-bottom: 16px;
-  resize: vertical;
-}
-
-.email input[type=submit] {
+/* Set a style for the submit/login button */
+.form-container .btn {
   background-color: #04AA6D;
   color: white;
-  padding: 12px 20px;
+  padding: 16px 20px;
   border: none;
-  border-radius: 4px;
   cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
 }
 
-.email input[type=submit]:hover {
-  background-color: #45a049;
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
 }
 
-.email .container {
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
 }
